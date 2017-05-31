@@ -9,20 +9,27 @@ If you don't know whether or not Nodejs is installed, type ```node -v``` into yo
 ### To run
 1. Make sure you are in the project directory
 2. Enter into terminal/console: 
-    ```node .``` 
+    
+    ```node .```
+    
     or 
+    
     ```node index.js```
 
 ### The bot won't run?
 If you want to run or test locally, you will need your own Discord client token and change the value of 
+    
     ```javascript
         const CLIENT_TOKEN = CONFIG.client_token;
     ``` 
-    to 
+
+to...
+    
     ```javascript
         const CLIENT_TOKEN = "whateveryourtokenis";
     ```
-    in `index.js`.
+
+in `index.js`.
 
 *Keep in mind the token needs to be in a string format.* If you're just copying and pasting your token in, you will need to put double quotes around it.
 
