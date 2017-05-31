@@ -1,5 +1,5 @@
 # DanBot
-Just some dumb discord bot. You can use my code to build your own bot too.
+Just some dumb Discord bot. You can use my code to build your own bot too.
 
 ----
 
