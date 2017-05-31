@@ -8,6 +8,8 @@ Just some dumb discord bot. You can use my code to build your own bot too.
 
 If you don't know whether or not Nodejs is installed, type ```node -v``` into your terminal. If you get a version number back then it is installed.
 
+----
+
 ### To run
 1. Make sure you are in the project directory
 2. Enter into terminal/console: 
