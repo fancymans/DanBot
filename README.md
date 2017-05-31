@@ -29,7 +29,7 @@ in `./index.js`.
 
 *Keep in mind the token needs to be in a string format.* If you're just copying and pasting your token in, you will need to put double quotes around it.
 
-Alternatively, you can [create a config.json file](#what-is-config.json?) to hold the client token. 
+Alternatively, you can [create a config.json file](#what-is-configjson) to hold the client token. 
 
 ### Ibsearch isn't working?
 This is the API key isn't provided. You can [get your own API key](https://ibsearch.xxx/api/) for free from Ibsearch.
