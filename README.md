@@ -18,12 +18,16 @@ If you don't know whether or not Nodejs is installed, type ```node -v``` into yo
 
 ### The bot won't run?
 If you want to run or test locally, you will need your own Discord client token and change the value of 
-    
-    const CLIENT_TOKEN = CONFIG.client_token;
+
+```javascript
+const CLIENT_TOKEN = CONFIG.client_token;
+```
 
 to...
 
-    const CLIENT_TOKEN = "whateveryourtokenis";
+```javascript
+const CLIENT_TOKEN = "whateveryourtokenis";
+```
 
 in `./index.js`.
 
