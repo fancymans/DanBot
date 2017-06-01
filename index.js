@@ -1,6 +1,6 @@
 // Config file
 var CONFIG = require("./config.json");
-var const CLIENT_TOKEN = CONFIG.client_token;
+const CLIENT_TOKEN = CONFIG.client_token;
 
 var Discordie = require("discordie");
 var client = new Discordie();
