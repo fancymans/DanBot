@@ -149,7 +149,12 @@ function r34_getRandomImageURL(imgCount) {
  * @param {String} msg - a text message to be sent to the channel.
  */
 function respondToCommand(channel, msg) {
-    channel.sendMessage(msg);
+    // Checking if channel is a 'nsfw' channel
+    if (channel.name == 'nsfw') {
+        channel.sendMessage(msg);
+    } else {
+        channel.sendMessage('NSFW posts are only allowed in the nsfw channel');
+    }
 }
 
 /* --------------------------------------------------------
