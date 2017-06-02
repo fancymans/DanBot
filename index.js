@@ -34,6 +34,16 @@ function commandReceived (message) {
 	return false;
 }
 
+// check if channel is named nsfw
+function isNSFW (channel) {
+    if (channel.name.includes('nsfw')) {
+        return true;
+    } else {
+        channel.sendMessage('This command can only be used in the NSFW channel');
+        return false;
+    }
+}
+
 // searches for a command that matches and calls it
 function queryCommand (channel, author, command) {
 
@@ -67,15 +77,19 @@ function queryCommand (channel, author, command) {
             break;
 
         case "ib":
-            var args = getArgs(command);
-            var performCommand = require("./commandIbsearch.js");
-            performCommand(channel, args);
+            if (isNSFW(channel)) {
+                var args = getArgs(command);
+                var performCommand = require("./commandIbsearch.js");
+                performCommand(channel, args);
+            }
             break;
 
         case "r34":
-            var args = getArgs(command);
-            var performCommand = require("./commandR34.js");
-            performCommand(channel, args);
+            if (isNSFW(channel)) {
+                var args = getArgs(command);
+                var performCommand = require("./commandR34.js");
+                performCommand(channel, args);
+            }
             break;
 
         default:
