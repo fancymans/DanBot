@@ -6,6 +6,9 @@ var Discordie = require("discordie");
 var client = new Discordie();
 const CMD_PREFIX = "?";	// all commands have to start with this as a prefix
 
+var fs = require('fs');
+var path = require('path');
+
 client.connect({token: CLIENT_TOKEN});
 
 client.Dispatcher.on("GATEWAY_READY", e => {
@@ -45,7 +48,7 @@ function isNSFW (channel) {
 }
 
 // searches for a command that matches and calls it
-function queryCommand (channel, author, command) {
+/*function queryCommand (channel, author, command) {
 
     switch(command[0]) {
         case "afternoon":
@@ -95,6 +98,27 @@ function queryCommand (channel, author, command) {
         default:
             channel.sendMessage("Uhh... wat do?");
     }
+}*/
+function queryCommand(channel, author, command) {
+    var files = fetchCommandFiles();
+    if (!files) {
+        channel.sendMessage("Whoops, no commands found :(");
+        return false;
+    }
+    for (var index = 0; index < files.length; index++) {
+        var filename = path.basename(files[index]);
+        var commandData = require("./Commands/" + filename)();
+        if (command[0] == commandData.Command) {
+            commandData.Function(channel,author,getArgs(command));
+        }
+    }
+}
+
+// Gets all command files
+function fetchCommandFiles() {
+    var files = fs.readdirSync('./Commands');
+    if (files) { return files };
+    console.log("No commands found");
 }
 
 // Gets arguments from input
