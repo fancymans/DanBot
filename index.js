@@ -109,6 +109,7 @@ function queryCommand(channel, author, command) {
         var filename = path.basename(files[index]);
         var commandData = require("./Commands/" + filename)();
         if (command[0] == commandData.Command) {
+            channel.sendTyping();
             commandData.Function(channel,author,getArgs(command));
         }
     }
