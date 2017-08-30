@@ -131,7 +131,7 @@ function r34_getRandomImageURL(imgCount) {
                         if (url == null || url == "") {
                             reject("Failed to get image.");
                         } else {
-                            resolve("https:" + url);
+                            resolve(url);
                         }
                     });
                 });
